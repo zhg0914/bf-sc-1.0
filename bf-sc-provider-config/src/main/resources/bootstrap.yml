@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: bf-sc-provider-config
+  zipkin:
+    base-url: http://localhost:9411
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: bf-sc-provider-config
+      fail-fast: true
+      username: root
+      password: root
+      profile: ivy
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://root:booszy@172.17.0.1:8761/eureka
+      defaultZone: http://root:root@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    appname: bf-sc-config-server
