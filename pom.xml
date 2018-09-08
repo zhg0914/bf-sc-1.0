@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.15.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>com.ivy.baseframe</groupId>
+    <artifactId>bf-sc-parent</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>bf-sc-config-server</module>
+        <module>bf-sc-eureka</module>
+		<module>bf-sc-provider-config</module>
+
+    </modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+
+		<spring-cloud-config-server.versin>1.3.2.RELEASE</spring-cloud-config-server.versin>
+		<spring-cloud-starter-config.versin>1.3.2.RELEASE</spring-cloud-starter-config.versin>
+
+		<spring-cloud-starter-eureka.version>1.3.4.RELEASE</spring-cloud-starter-eureka.version>
+		<spring-cloud-starter-eureka-server.version>1.3.4.RELEASE</spring-cloud-starter-eureka-server.version>
+		<spring-cloud-starter-sleuth.version>1.3.1.RELEASE</spring-cloud-starter-sleuth.version>
+
+		<spring-cloud-sleuth-zipkin.version>1.3.1.RELEASE</spring-cloud-sleuth-zipkin.version>
+
+		<spring-boot-starter-security.version>1.5.6.RELEASE</spring-boot-starter-security.version>
+
+		<spring-boot-actuator.versin>1.5.6.RELEASE</spring-boot-actuator.versin>
+		<druid-spring-boot-starter.version>1.1.2</druid-spring-boot-starter.version>
+
+
+		<fastjson.version>1.2.38</fastjson.version>
+
+	</properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-eureka-server</artifactId>
+				<version>${spring-cloud-starter-eureka-server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-eureka</artifactId>
+				<version>${spring-cloud-starter-eureka.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-config</artifactId>
+				<version>${spring-cloud-starter-config.versin}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-config-server</artifactId>
+				<version>${spring-cloud-config-server.versin}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-sleuth</artifactId>
+				<version>${spring-cloud-starter-sleuth.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+				<version>${spring-cloud-sleuth-zipkin.versin}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-security</artifactId>
+				<version>${spring-boot-starter-security.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>${druid-spring-boot-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>repo</id>
+			<name>Nexus Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+</project>
