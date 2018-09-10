@@ -18,7 +18,7 @@
         <module>bf-sc-config-server</module>
         <module>bf-sc-eureka</module>
 		<module>bf-sc-provider-config</module>
-
+		<module>bf-sc-config-client</module>
     </modules>
 
 	<properties>
